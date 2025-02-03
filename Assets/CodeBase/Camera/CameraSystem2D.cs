@@ -55,7 +55,7 @@ public class CameraSystem2D : MonoBehaviour
 
         Vector3 moveDir = -transform.up * inputDir.y + -transform.right * inputDir.x;
 
-        transform.position += moveDir * _moveSpeed * Time.deltaTime;
+        transform.position += moveDir * _moveSpeed*_camera.orthographicSize * Time.deltaTime;
     }
 
     private void LateUpdate()
