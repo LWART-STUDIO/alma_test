@@ -1,3 +1,4 @@
+using CodeBase.PinsFactory;
 using UnityEngine;
 public class CameraSystem2D : MonoBehaviour
 {
@@ -23,7 +24,28 @@ public class CameraSystem2D : MonoBehaviour
     private void Update()
     {
         HandleCameraMovementDragPan();
-        
+        HandlePinActions();
+    }
+
+    private void HandlePinActions()
+    {
+        if(Input.GetMouseButtonDown(0))
+            SpawnPin();
+    }
+
+    private void SpawnPin()
+    {
+        // Store current mouse position in pixel coordinates.
+        Vector3 mousePixelPos = Input.mousePosition;
+
+        // Add depth so it can actually be used to cast a ray.
+        Vector3 worldPoint = Input.mousePosition;
+        worldPoint.z = Mathf.Abs(_camera.transform.position.z);
+        //worldPoint.z = 11f;
+        Vector3 mouseWorldPosition = _camera.ScreenToWorldPoint(worldPoint);
+        mouseWorldPosition.z = 0f;
+        SpawnFactory.Instance.SpawnPin(mouseWorldPosition);
+        Debug.Log(mouseWorldPosition);
     }
 
     //Manages the camera drag input
