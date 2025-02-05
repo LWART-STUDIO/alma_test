@@ -28,3 +28,8 @@
 - Для анимации использовался [DoTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
 - Для UI были использованы [True Shadow](https://assetstore.unity.com/packages/tools/gui/true-shadow-ui-soft-shadow-and-glow-205220) и [Translucent Image](https://assetstore.unity.com/packages/tools/gui/translucent-image-fast-ui-background-blur-78464) в роли украшающих эллементов
 - Карта взята скрином из Google Maps
+  
+
+https://github.com/user-attachments/assets/09c8f51e-4a4c-4a1b-9427-107ae9301ce4
+
+
