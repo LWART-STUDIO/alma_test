@@ -20,3 +20,11 @@
 - Unity 2021 LTS или более поздняя версия
 - Оптимизация загрузки/сохранения обязательна (время загрузки будет измерено)
 - Использование DoTween будет плюсом
+# Принятые решения
+- Использованы синглтоны вместо DI, мало объектов, работают быстрее чем Zenject
+- Использование json для сохранения данных. Картинки сохраняеются в кеш, и в виде пути к файлу.
+Можно сделать дублирование картинки туда же куда и основное сохранение и грузить потом оттуда.
+Сама загрузка сделана с помощью [Native File Picker](https://assetstore.unity.com/packages/tools/integration/native-file-picker-for-android-ios-173238?srsltid=AfmBOooqQ0PkVru-lTLBbPPGPfFQz0sU7MalDbbCIKcWZwJnWaj3DH2j) и [Unity-ImageLoader](https://github.com/IvanMurzak/Unity-ImageLoader).
+- Для анимации использовался [DoTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
+- Для UI были использованы [True Shadow](https://assetstore.unity.com/packages/tools/gui/true-shadow-ui-soft-shadow-and-glow-205220) и [Translucent Image](https://assetstore.unity.com/packages/tools/gui/translucent-image-fast-ui-background-blur-78464) в роли украшающих эллементов
+- Карта взята скрином из Google Maps
