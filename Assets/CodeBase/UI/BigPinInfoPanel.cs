@@ -1,4 +1,5 @@
 ﻿using System;
+using CodeBase.PinsFactory;
 using CodeBase.SaveSystem;
 using TMPro;
 using UnityEngine;
@@ -17,12 +18,20 @@ namespace CodeBase.UI
          {
              _title.onEndEdit.AddListener(SaveTitle);
              _description.onEndEdit.AddListener(SaveDescription);
+             
          }
 
          private void OnDisable()
          {
              _title.onEndEdit.RemoveListener(SaveTitle);
              _description.onEndEdit.RemoveListener(SaveDescription);
+         }
+
+         public void DeletePin()
+         {
+             
+             SpawnFactory.Instance.DestroyPin(_savedPin); 
+             UIControl.Instance.HideAllPanels();
          }
 
          public void SetUp(Pin.Pin pin)

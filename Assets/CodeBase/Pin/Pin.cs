@@ -3,7 +3,6 @@ using CodeBase.SaveSystem;
 using CodeBase.SaveSystem.Extension;
 using CodeBase.SaveSystem.Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CodeBase.Pin
 {
@@ -41,6 +40,17 @@ namespace CodeBase.Pin
             }
             
         }
+
+        public string GetImage()
+        {
+            return _imagePath;
+        }
+        public void SetImage(string path)
+        {
+            _imagePath = path;
+            _data.ImagePath = path;
+            SaveLoadSystem.Instance.Save();
+        }
         public void SetTitle(string text)
         {
             _name = text;
@@ -73,6 +83,11 @@ namespace CodeBase.Pin
             _data.Name = _name;
             _data.Description = _description;
             _data.ImagePath = _imagePath;
+        }
+
+        public SerializableGuid GetId()
+        {
+            return Id;
         }
 
 

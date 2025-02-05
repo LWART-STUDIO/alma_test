@@ -65,8 +65,10 @@ namespace CodeBase.PinsFactory
         public void DestroyPin(Pin.Pin pin)
         {
             //Нецелесообразно использовать пулл объектов в данном случае
+            SaveLoadSystem.Instance.DeletePin(pin.GetId());
             _pins.Remove(pin);
             Destroy(pin.gameObject);
+            
  
         }
         public void SpawnPin(PinData data)

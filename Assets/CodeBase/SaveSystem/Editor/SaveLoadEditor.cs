@@ -29,7 +29,7 @@ namespace CodeBase.SaveSystem.Editor
 
             if (GUILayout.Button("Delete Data"))
             {
-                saveLoadSystem.Delete(saveName);
+                saveLoadSystem.DeleteAll();
             }
         }
     }

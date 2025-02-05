@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Pin;
 using CodeBase.PinsFactory;
+using CodeBase.SaveSystem.Extension;
 using CodeBase.SaveSystem.Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -124,10 +125,16 @@ namespace CodeBase.SaveSystem
             }
             
         }
-
-        public void Delete(string saveName)
+        public void DeletePin(SerializableGuid pinId)
         {
-            _dataService.Delete(saveName);
+            MapData.PinDatas.RemoveAll(x => x.Id == pinId);
+            _dataService.Save(MapData);
+            
+            
+        }
+        public void DeleteAll()
+        {
+            _dataService.DeleteAll();
             SpawnFactory.Instance.DestroyAllPins();
             NewLaunch();
             

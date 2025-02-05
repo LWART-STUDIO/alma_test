@@ -18,6 +18,11 @@ namespace CodeBase.UI
         {
             _title.onEndEdit.RemoveListener(SaveTitle);
         }
+        public void ShowBigPinInfo()
+        {
+            UIControl.Instance.ShowBigPinInfo(_savedPin);
+            
+        }
         public void SetUp(Pin.Pin pin)
         {
             _savedPin = pin;
