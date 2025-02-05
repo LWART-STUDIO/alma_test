@@ -341,6 +341,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385961228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6253403600192182348, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+  m_PrefabInstance: {fileID: 5584784060327577933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6223c6bdadc24889a0ba6b8b5c10222f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445273320
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +740,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2583836808551962146, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.824951
+      objectReference: {fileID: 0}
     - target: {fileID: 2723227933134818129, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
       propertyPath: m_Name
       value: UI
@@ -797,6 +812,14 @@ PrefabInstance:
       propertyPath: _source
       value: 
       objectReference: {fileID: 1900620371}
+    - target: {fileID: 6240205105030435776, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1385961228}
+    - target: {fileID: 6240205105030435776, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNewImage
+      objectReference: {fileID: 0}
     - target: {fileID: 6569746620392031285, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
       propertyPath: m_Alpha
       value: 0
