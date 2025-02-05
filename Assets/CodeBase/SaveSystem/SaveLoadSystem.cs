@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Pin;
 using CodeBase.PinsFactory;
 using CodeBase.SaveSystem.Interfaces;
 using Unity.VisualScripting;
@@ -83,7 +84,6 @@ namespace CodeBase.SaveSystem
         private void Bind<T, TData>(List<TData> datas) where T : MonoBehaviour, IBind<TData> where TData : ISaveable, new()
         {
             var entities = FindObjectsByType<T>(FindObjectsSortMode.None);
-            Debug.Log(datas.Count);
             foreach (var entity in entities)
             {
                 var data = datas.FirstOrDefault(x => x.Id == entity.Id);
@@ -109,7 +109,7 @@ namespace CodeBase.SaveSystem
 
         public void Save()
         {   
-            Bind<Pin, PinData>(MapData.PinDatas);
+            Bind<Pin.Pin, PinData>(MapData.PinDatas);
             _dataService.Save(MapData);
         }
 
@@ -117,11 +117,6 @@ namespace CodeBase.SaveSystem
         {
             SpawnFactory.Instance.DestroyAllPins();
             MapData = _dataService.Load(saveName);
-            if (MapData == null)
-            {
-                NewLaunch();
-                return;
-            }
 
             foreach (var pinData in MapData.PinDatas)
             {

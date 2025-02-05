@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using CodeBase.Pin;
 using CodeBase.SaveSystem;
+using CodeBase.UI;
 using Mono.Cecil;
 using UnityEngine;
 
@@ -12,8 +14,8 @@ namespace CodeBase.PinsFactory
         public static SpawnFactory Current;
         protected static SpawnFactory instance;
         
-        [SerializeField] private Pin _pinPrefab;
-        [SerializeField] private List<Pin> _pins;
+        [SerializeField] private Pin.Pin _pinPrefab;
+        [SerializeField] private List<Pin.Pin> _pins;
 
         public static SpawnFactory Instance
         {
@@ -53,29 +55,32 @@ namespace CodeBase.PinsFactory
         }
         public void DestroyAllPins()
         {
-            foreach (Pin pin in _pins)
+            foreach (Pin.Pin pin in _pins)
             {
                 Destroy(pin.gameObject);
             }
             _pins.Clear();
+
         }
-        public void DestroyPin(Pin pin)
+        public void DestroyPin(Pin.Pin pin)
         {
             //Нецелесообразно использовать пулл объектов в данном случае
             _pins.Remove(pin);
             Destroy(pin.gameObject);
+ 
         }
         public void SpawnPin(PinData data)
         {
-            Pin pin = Instantiate(_pinPrefab, Vector3.zero, Quaternion.identity);
+            Pin.Pin pin = Instantiate(_pinPrefab, Vector3.zero, Quaternion.identity);
             pin.SetUpNew(data);
             _pins.Add(pin);
         }
         public void SpawnPin(Vector2 spawnPosition)
         {
-            Pin pin = Instantiate(_pinPrefab, spawnPosition, Quaternion.identity);
+            Pin.Pin pin = Instantiate(_pinPrefab, spawnPosition, Quaternion.identity);
             pin.SetUpNew();
             _pins.Add(pin);
+            UIControl.Instance.ShowSmallPinInfo(pin);
             SaveLoadSystem.Instance.Save();
         }
     }
