@@ -789,14 +789,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4903506454447121724, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5065359967667859645, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
       propertyPath: _source
       value: 
       objectReference: {fileID: 1900620371}
+    - target: {fileID: 6569746620392031285, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6869286827782496757, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
       propertyPath: _source
       value: 
       objectReference: {fileID: 1900620371}
+    - target: {fileID: 6874339352609234813, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315835487106845616, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7366124303283344938, guid: 34a49cb987bdb2d4d97004709a93cff8, type: 3}
       propertyPath: m_Camera
       value: 

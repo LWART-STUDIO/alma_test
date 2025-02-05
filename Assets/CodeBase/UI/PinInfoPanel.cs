@@ -81,7 +81,6 @@ namespace CodeBase.UI
         public string ImportImage()
         {
             string newPath = null;
-            Debug.Log("Import image");
 #if UNITY_ANDROID
             // Use MIMEs on Android
             string[] fileTypes = new string[] { "image/*"};
@@ -108,8 +107,7 @@ namespace CodeBase.UI
                     newPath = path;
                 }
             }, fileTypes);
-
-            Debug.Log("Permission result: " + permission);
+            
             return newPath;
         }
     }
